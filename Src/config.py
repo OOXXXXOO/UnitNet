@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    config.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: winshare <winshare@student.42.fr>          +#+  +:+       +#+         #
+#    By: Tom Winshare <tanwenxuan@live.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 19:46:50 by winshare          #+#    #+#              #
-#    Updated: 2020/08/25 15:41:06 by winshare         ###   ########.fr        #
+#    Updated: 2020/10/02 02:08:34 by Tom Winshar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from reference import *
+from reference import ref,framework_title
 import json,os
 import torch
 class cfg(ref):
@@ -55,8 +55,13 @@ class cfg(ref):
 
         # -------------------------------- First Level ------------------------------- #
         self.experiment=self.__json["experiment"]
+
         self.MissionType=self.__json['MissionType']
+        assert self.MissionType in self.mission_supported,"\033[1;31m invalid mission type: "+self.MissionType+" & supported mission is "+str(self.mission_supported)
+        
         self.InstanceID=self.__json['instance_id']
+        
+        
         self.Content=self.__json['content']
 
 

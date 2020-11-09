@@ -49,6 +49,30 @@ class ref():
     
         :rtype:
         """
+
+
+        self.mission_supported={
+            "InstenceSegmentation":[
+                dataset.CocoDetection
+            ],
+            "Detection":[
+                dataset.CocoDetection
+            ],
+            "Classification":{
+                "ImageNet":dataset.ImageNet,
+                "MINST":dataset.MNIST,
+                "CIFAR100":dataset.CIFAR100,
+                "Cityscapes":dataset.Cityscapes,
+            },
+            "Segmentation":[
+                
+
+            ]
+        }
+
+
+
+
       
         # ---------------------------------------------------------------------------- #
         #                              Optimizer Function                              #
@@ -60,7 +84,7 @@ class ref():
            "Adam":optim.Adam,
            "Adadelta":optim.Adadelta,
            "Adagrad":optim.Adagrad,
-           "AdamW":optim.AdamW,
+           "AdamW":optim.AdamW, 
            "LBFGS":optim.LBFGS,
            "RMSprop":optim.RMSprop,
            "SparseAdam":optim.SparseAdam,
